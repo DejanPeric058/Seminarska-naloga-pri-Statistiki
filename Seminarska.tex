@@ -1,0 +1,152 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[slovene,english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amsthm, url, amssymb}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
+\setlength{\parindent}{0cm}
+
+\newtheorem{definicija*}{Definicija}
+\newtheorem{trditev}[definicija*]{Trditev}
+\newtheorem{posledica}[definicija*]{Posledica}
+\newtheorem{izrek}[definicija*]{Izrek}
+\newtheorem*{primer}{Primer}
+
+
+\title{Seminarska naloga iz Statistike}
+\author{Dejan Perić \\~ \\ }
+
+
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\selectlanguage{slovene}
+
+\maketitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Prva naloga}
+
+V datoteki Kibergrad se nahajajo informacije o 43.886 družinah, 
+ki stanujejo v mestu Kibergrad. Za vsako družino so zabeleženi 
+naslednji podatki (ne boste potrebovali vseh):
+
+\begin{itemize}
+    \item Tip družine (od 1 do 3)
+    \item Število članov družine
+    \item Število otrok v družini
+    \item Skupni dohodek družine
+    \item Mestna četrt, v kateri stanuje družina (od 1 do 4)
+    \item Stopnja izobrazbe vodje gospodinjstva (od 31 do 46)
+\end{itemize}
+    
+\subsection{a)}
+Vzemite enostavni slučajni vzorec 200 družin in na njegovi podlagi ocenite
+povprečno število otrok na družino v Kibergradu.
+
+
+\subsection{b)}
+Ocenite standardno napako in postavite 95\% interval zaupanja.
+
+\subsection{c)}
+Vzorčno povprečje in ocenjeno standardno napako primerjajte s populacijskim
+povprečjem in pravo standardno napako. Ali interval zaupanja iz prejšnje točke
+pokrije populacijsko povprečje?
+
+\subsection{d)}
+Vzemite še 99 enostavnih slučajnih vzorcev in prav tako za vsakega določite
+95\% interval zaupanja. Narišite intervale zaupanja, ki pripadajo tem 100 
+vzorcem. Koliko jih pokrije populacijsko povprečje?
+
+\subsection{e)}
+Izračunajte standardni odklon vzorčnih povprečij za 100 prej dobljenih 
+vzorcev. Primerjajte s pravo standardno napako za vzorec velikosti 200.
+
+\subsection{f)}
+Izvedite prejšnji dve točki še na 100 vzorcih po 800 družin. Primerjajte 
+in razložite razlike s teorijo vzorčenja.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Druga naloga}
+
+\subsection{a)}
+Ocenite povprečje in standardni odklon za telesno temperaturo posebej pri
+moških in posebej pri ženskah.
+
+\subsection{b)}
+Za povprečji iz prejšnje točke določite 95\% intervala zaupanja.
+
+\subsection{c)}
+Preizkusite domnevo, da imajo moški in ženske v povprečju enako telesno 
+temperaturo.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Tretja naloga}
+
+V datoteki Temp LJ se nahajajo izmerjene mesečne temperature v Ljubljani v 
+letih od 1986 do 2020. Postavimo naslednja dva modela spreminjanja temperature
+s časom: 
+
+\begin{itemize}
+     
+    \item Model A: vključuje linearni trend in sinusno nihanje s periodo eno 
+        leto.
+    \item Model B: vključuje linearni trend in spreminjanje temperature za 
+        vsak mesec posebej.
+
+\end{itemize}
+
+Očitno je model B širši od modela A.
+
+\subsection{a)}
+
+Preizkusite model A znotraj modela B.
+
+\subsection{b)}
+Pri modeliranju je nevarno privzeti preširok model: lahko bi recimo postavili
+model, po katerem je temperatura vsak mesec drugačna, neidvisno od ostalih
+mesecev, a tak model bi bil neuporaben za napovedovanje. Akaikejeva 
+informacija nam pomaga poiskati optimalni model – izberemo tistega, za katerega
+je le-ta najmanjša. Akaikejeva informacija je sicer definirana z verjetjem, 
+a pri linearni regresiji in Gaussovem modelu je le-ta ekvivalentna naslednji 
+modifikaciji:
+
+\[
+    \text{AIC} := 2m + n \ln \text{RSS,}
+    \]
+
+kjer je m število parametrov, n pa je število opažanj. Kateri od zgornjih dveh
+modelov ima manjšo Akaikejevo informacijo?
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Literatura}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
