@@ -48,12 +48,23 @@ naslednji podatki (ne boste potrebovali vseh):
 \end{itemize}
     
 \subsection{a)}
-Vzemite enostavni slučajni vzorec 200 družin in na njegovi podlagi ocenite
-povprečno število otrok na družino v Kibergradu.
 
+Izmed 43886 družin izberemo vzorec družin velikosti 200. Vzorce bomo pridobivali s pomočjo sample iz knjižnice random. Za cenilko povprečnega števila otrok bomo vzeli cenilko
+
+$$\mu = \frac{1}{200}\sum^{200}_{n=1} X_n $$
+
+Dobimo oceno, da je povprečno število otrok v Kibergradu enako 0,975.
 
 \subsection{b)}
 Ocenite standardno napako in postavite 95\% interval zaupanja.
+
+Za cenilko standardne napake bomo vzeli cenilko iz predavanj. Ta je enaka 
+
+$$ \hat{SE}_+^2 = \frac{N-n}{N-1} \cdot \frac{\hat{\sigma}_+^2}{n} \text{ ,}$$
+
+pri čemer je $\hat{\sigma}_+^2$ enaka 
+
+$$ \frac{N-1}{N} \cdot \frac{1}{n-1} \sum  $$
 
 \subsection{c)}
 Vzorčno povprečje in ocenjeno standardno napako primerjajte s populacijskim
@@ -135,18 +146,3 @@ modelov ima manjšo Akaikejevo informacijo?
 \section{Literatura}
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
