@@ -99,6 +99,7 @@ povprečja pri vzorcu.
 $$ \mu = \frac{1}{43886}\sum^{200}_{i=1} X_i = 0.9479332816843641
 $$
 
+Opazimo, da se populacijsko povprečje in vzorčno povprečje ujemata zgolj v eni decimalki.
 Iz vseh podatkov družin lahko izračunamo varianco števila otrok družin, s pomočjo
 katere bomo lahko ocenili kakšna je prava standardna napaka za vzorec velikosti 200.
 Ker imamo podatke celotne populacije, za cenilko variance vzamemo
@@ -110,6 +111,16 @@ Za cenilko prave standardne napake vzamemo cenilko, najdeno v knjigi ????:
 
 $$ SE^2 = \frac{\sigma^2}{n} \cdot (\frac{N-n}{N-1}) = \frac{\sigma^2}{200} \cdot \frac{43686}{43885}
 $$
+
+Dobimo, da je prava standardna napaka ocenjena z $SE = 0.0816404987959038$. Absolutna
+napaka ocenjene standardne napake je torej ???, relativna pa ???.
+
+Opazimo, da je
+
+$$ \mu = 0.9479332816843641 \in (0.7379511969254118, 1.0620488030745883) \text{ ,}
+$$
+
+torej interval zaupanja iz prejšnje točke pokrije populacijsko povprečje.
 
 \subsection{d)}
 Vzemite še 99 enostavnih slučajnih vzorcev in prav tako za vsakega določite
