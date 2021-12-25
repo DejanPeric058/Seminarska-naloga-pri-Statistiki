@@ -51,12 +51,11 @@ naslednji podatki (ne boste potrebovali vseh):
 
 Izmed 43886 družin izberemo vzorec družin velikosti 200. Vzorce bomo pridobivali s pomočjo sample iz knjižnice random. Za cenilko povprečnega števila otrok bomo vzeli cenilko
 
-$$\mu = \frac{1}{200}\sum^{200}_{n=1} X_n $$
+$$\hat{\mu} = \frac{1}{200}\sum^{200}_{i=1} X_i $$
 
-Dobimo oceno, da je povprečno število otrok v Kibergradu enako 0,975.
+Dobimo oceno, da je povprečno število otrok v Kibergradu enako $0,975$.
 
 \subsection{b)}
-Ocenite standardno napako in postavite 95\% interval zaupanja.
 
 Za cenilko standardne napake bomo vzeli cenilko iz predavanj. Ta je enaka 
 
@@ -64,12 +63,53 @@ $$ \hat{SE}_+^2 = \frac{N-n}{N-1} \cdot \frac{\hat{\sigma}_+^2}{n} \text{ ,}$$
 
 pri čemer je $\hat{\sigma}_+^2$ enaka 
 
-$$ \frac{N-1}{N} \cdot \frac{1}{n-1} \sum  $$
+$$\hat{\sigma}_+^2 = \frac{N-1}{N} \cdot \frac{1}{n-1} \sum_{i=1}^{n} (X_i - X)^2 \text{ .} $$ $$
+\hat{SE}_+^2 = \frac{N-n}{N} \cdot \frac{1}{n\cdot(n-1)} \sum_{i=1}^{n} (X_i - X)^2
+$$
+
+Pri nas je $ N = 43886 $ in $ n = 200 $, torej je
+
+$$ \hat{SE}_+^2 = \frac{43686}{43886} \cdot \frac{1}{200\cdot199} \sum_{i=1}^{200} (X_i - X)^2 \text{ .}
+$$
+
+Izračunamo, da je standardna napaka enaka $ 0.09054913965779846 $.
+
+Sedaj s pomočjo studentove porazdelitve izračunajmo eksakten 95\% interval zaupanja.
+Iz predavanj vemo, da je ta oblike
+
+$$ \mu \in (\hat{\mu} - \hat{SE}_+ \cdot F^{-1}_{Student(n-1)}(1-\frac{\alpha}{2}),\hat{\mu} + \hat{SE}_+ \cdot F^{-1}_{Student(n-1)}(1-\frac{\alpha}{2}) ) \text{ .}
+$$
+
+Oceni za povprečno število otrok ($\hat{\mu}$) in standardno napako ($\hat{SE}_+$)
+že imamo. Stopnja tveganja je enaka $\alpha = 0,05$. S pomočjo knjižnice $scipy.stats$ izračunamo, da je 
+
+$$ F^{-1}_{Student(n-1)}(0,975) = 1.9719565442493954
+$$
+
+Interval zaupanja je torej enak $(0.7379511969254118, 1.0620488030745883)$
 
 \subsection{c)}
 Vzorčno povprečje in ocenjeno standardno napako primerjajte s populacijskim
 povprečjem in pravo standardno napako. Ali interval zaupanja iz prejšnje točke
 pokrije populacijsko povprečje?
+
+Za cenilko povprečja celotne populacije bomo vzeli isto kot smo za oceno populacijskega
+povprečja pri vzorcu. 
+
+$$ \mu = \frac{1}{43886}\sum^{200}_{i=1} X_i = 0.9479332816843641
+$$
+
+Iz vseh podatkov družin lahko izračunamo varianco števila otrok družin, s pomočjo
+katere bomo lahko ocenili kakšna je prava standardna napaka za vzorec velikosti 200.
+Ker imamo podatke celotne populacije, za cenilko variance vzamemo
+
+$$ \sigma^2 = \frac{1}{n} \sum_{i=1}^{43886} (X_i - X)^2 = 1.3391064929282408
+$$
+
+Za cenilko prave standardne napake vzamemo cenilko, najdeno v knjigi ????:
+
+$$ SE^2 = \frac{\sigma^2}{n} \cdot (\frac{N-n}{N-1}) = \frac{\sigma^2}{200} \cdot \frac{43686}{43885}
+$$
 
 \subsection{d)}
 Vzemite še 99 enostavnih slučajnih vzorcev in prav tako za vsakega določite
