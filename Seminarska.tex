@@ -53,7 +53,7 @@ Izmed 43886 družin izberemo vzorec družin velikosti 200. Vzorce bomo pridobiva
 
 $$\hat{\mu} = \frac{1}{200}\sum^{200}_{i=1} X_i $$
 
-Dobimo oceno, da je povprečno število otrok v Kibergradu enako $0,975$.
+Dobimo oceno, da je povprečno število otrok v Kibergradu enako $0,9400$.
 
 \subsection{b)}
 
@@ -72,7 +72,7 @@ Pri nas je $ N = 43886 $ in $ n = 200 $, torej je
 $$ \hat{SE}_+^2 = \frac{43686}{43886} \cdot \frac{1}{200\cdot199} \sum_{i=1}^{200} (X_i - X)^2 \text{ .}
 $$
 
-Izračunamo, da je standardna napaka enaka $ 0.09054913965779846 $.
+Izračunamo, da je standardna napaka enaka $ 0.07800452720101289 $.
 
 Sedaj s pomočjo studentove porazdelitve izračunajmo eksakten 95\% interval zaupanja.
 Iz predavanj vemo, da je ta oblike
@@ -86,12 +86,9 @@ Oceni za povprečno število otrok ($\hat{\mu}$) in standardno napako ($\hat{SE}
 $$ F^{-1}_{Student(n-1)}(0,975) = 1.9719565442493954
 $$
 
-Interval zaupanja je torej enak $(0.7379511969254118, 1.0620488030745883)$
+Interval zaupanja je torej enak $(0.7861784621048826, 1.0938215378951173)$
 
 \subsection{c)}
-Vzorčno povprečje in ocenjeno standardno napako primerjajte s populacijskim
-povprečjem in pravo standardno napako. Ali interval zaupanja iz prejšnje točke
-pokrije populacijsko povprečje?
 
 Za cenilko povprečja celotne populacije bomo vzeli isto kot smo za oceno populacijskega
 povprečja pri vzorcu. 
@@ -123,17 +120,45 @@ $$
 torej interval zaupanja iz prejšnje točke pokrije populacijsko povprečje.
 
 \subsection{d)}
-Vzemite še 99 enostavnih slučajnih vzorcev in prav tako za vsakega določite
-95\% interval zaupanja. Narišite intervale zaupanja, ki pripadajo tem 100 
-vzorcem. Koliko jih pokrije populacijsko povprečje?
+
+Vzemimo še 99 vzorcev populacije velikosti 200. Določimo 95\% intervale zaupanja. 
+Glede na to, da imamo skupaj 100
+vzorcev, pričakujemo, da bo približno 95 intervalov zaupanja pokrilo populacijsko
+povprečje ($\mu = ???$). Vse skupaj ponazorimo z grafom.
+
+% include graphics
+
+Ugotovimo, da ??? intervalov pokrije populacijsko povprečje.
 
 \subsection{e)}
-Izračunajte standardni odklon vzorčnih povprečij za 100 prej dobljenih 
-vzorcev. Primerjajte s pravo standardno napako za vzorec velikosti 200.
+
+Za teh 99 vzorcev izračunamo še standardni odklon za vsakega posebej. 
+Za cenilko standardnega odklona vzamemo isto, kot smo jo vzeli za standardno 
+napako v prvem vzorcu; standardni odklon in standardna napaka sta namreč za ta
+primer ista. Skupaj s pravo standardno napako rezultate prikažemo z grafom.
+
+% include graphics
+
+
 
 \subsection{f)}
 Izvedite prejšnji dve točki še na 100 vzorcih po 800 družin. Primerjajte 
 in razložite razlike s teorijo vzorčenja.
+
+Sedaj vzamemo 100 vzorcev populacije velikosti 400. Za vsak vzorec izračunamo
+interval zaupanja in standardni odklon. Ker imamo 95\% interval zaupanja, spet
+pričakujemo, da bo približno 95 intervalov pokrilo populacijsko povprečje.
+
+% include graphics
+
+Vidimo, da ??? pokrije interval.
+
+Poglejmo si še graf z ocenjenimi standardnimi odkloni.
+
+% include graphics
+
+Opazimo, da je odstopanje od pravega standardnega odklona sedaj manjše kot
+pri vzorcih velikosti 200.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
