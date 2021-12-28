@@ -113,15 +113,13 @@ INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmr17.tfm
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmbx12.tfm
-INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmr.fd
-INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmr.fd
-INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmsy10.tfm
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmr8.tfm
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmr6.tfm
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmmi12.tfm
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmmi8.tfm
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmmi6.tfm
+INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmsy10.tfm
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmsy8.tfm
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/lmsy6.tfm
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msam10.tfm
@@ -132,11 +130,34 @@ INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 OUTPUT c:/Users/User/OneDrive - Univerza v Ljubljani/Faks/3. letnik/Staty/Seminarska/Seminarska-naloga-pri-Statistiki/Seminarska.pdf
 INPUT C:/Users/User/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map
+INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/lm/rm-lmri12.tfm
+INPUT slike/Intervali_zaupanja_200.png
+INPUT ./slike/Intervali_zaupanja_200.png
+INPUT ./slike/Intervali_zaupanja_200.png
+INPUT ./slike/Intervali_zaupanja_200.png
+INPUT ./slike/Intervali_zaupanja_200.png
+INPUT slike/St_napaka_200.png
+INPUT ./slike/St_napaka_200.png
+INPUT ./slike/St_napaka_200.png
+INPUT ./slike/St_napaka_200.png
+INPUT ./slike/St_napaka_200.png
+INPUT slike/Intervali_zaupanja_400.png
+INPUT ./slike/Intervali_zaupanja_400.png
+INPUT ./slike/Intervali_zaupanja_400.png
+INPUT ./slike/Intervali_zaupanja_400.png
+INPUT ./slike/Intervali_zaupanja_400.png
+INPUT slike/St_napaka_400.png
+INPUT ./slike/St_napaka_400.png
+INPUT ./slike/St_napaka_400.png
+INPUT ./slike/St_napaka_400.png
+INPUT ./slike/St_napaka_400.png
+INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmr.fd
+INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmr.fd
 INPUT c:/Users/User/OneDrive - Univerza v Ljubljani/Faks/3. letnik/Staty/Seminarska/Seminarska-naloga-pri-Statistiki/Seminarska.aux
+INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc
-INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb
@@ -151,6 +172,8 @@ INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr1
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb
+INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb
+INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb

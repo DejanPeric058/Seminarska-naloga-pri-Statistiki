@@ -5,6 +5,7 @@
 \usepackage{lmodern}
 \usepackage{graphicx}
 \usepackage[shortlabels]{enumitem}
+\graphicspath{ {./slike/} }
 \setlength{\parindent}{0cm}
 
 \newtheorem{definicija*}{Definicija}
@@ -32,30 +33,17 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Prva naloga}
-
-V datoteki Kibergrad se nahajajo informacije o 43.886 družinah, 
-ki stanujejo v mestu Kibergrad. Za vsako družino so zabeleženi 
-naslednji podatki (ne boste potrebovali vseh):
-
-\begin{itemize}
-    \item Tip družine (od 1 do 3)
-    \item Število članov družine
-    \item Število otrok v družini
-    \item Skupni dohodek družine
-    \item Mestna četrt, v kateri stanuje družina (od 1 do 4)
-    \item Stopnja izobrazbe vodje gospodinjstva (od 31 do 46)
-\end{itemize}
+\section*{Prva naloga}
     
-\subsection{a)}
+\subsection*{a)}
 
-Izmed 43886 družin izberemo vzorec družin velikosti 200. Vzorce bomo pridobivali s pomočjo sample iz knjižnice random. Za cenilko povprečnega števila otrok bomo vzeli cenilko
+Izmed 43886 družin izberemo vzorec družin velikosti 200. Vzorce bomo pridobivali s pomočjo $sample$ iz knjižnice $random$. Za cenilko povprečnega števila otrok bomo vzeli cenilko
 
 $$\hat{\mu} = \frac{1}{200}\sum^{200}_{i=1} X_i $$
 
-Dobimo oceno, da je povprečno število otrok v Kibergradu enako $0,9400$.
+Dobimo oceno, da je povprečno število otrok v Kibergradu enako $0.8400$.
 
-\subsection{b)}
+\subsection*{b)}
 
 Za cenilko standardne napake bomo vzeli cenilko iz predavanj. Ta je enaka 
 
@@ -72,114 +60,136 @@ Pri nas je $ N = 43886 $ in $ n = 200 $, torej je
 $$ \hat{SE}_+^2 = \frac{43686}{43886} \cdot \frac{1}{200\cdot199} \sum_{i=1}^{200} (X_i - X)^2 \text{ .}
 $$
 
-Izračunamo, da je standardna napaka enaka $ 0.07800452720101289 $.
+Izračunamo, da je standardna napaka enaka $ 0.071584 $.
 
 Sedaj s pomočjo studentove porazdelitve izračunajmo eksakten 95\% interval zaupanja.
 Iz predavanj vemo, da je ta oblike
 
-$$ \mu \in (\hat{\mu} - \hat{SE}_+ \cdot F^{-1}_{Student(n-1)}(1-\frac{\alpha}{2}),\hat{\mu} + \hat{SE}_+ \cdot F^{-1}_{Student(n-1)}(1-\frac{\alpha}{2}) ) \text{ .}
+$$ \mu \in (\hat{\mu} - \hat{SE}_+ \cdot F^{-1}_{Student(n-1)}(1-\frac{\alpha}{2}), \text{ }\hat{\mu} + \hat{SE}_+ \cdot F^{-1}_{Student(n-1)}(1-\frac{\alpha}{2}) ) \text{ .}
 $$
 
 Oceni za povprečno število otrok ($\hat{\mu}$) in standardno napako ($\hat{SE}_+$)
-že imamo. Stopnja tveganja je enaka $\alpha = 0,05$. S pomočjo knjižnice $scipy.stats$ izračunamo, da je 
+že imamo. Stopnja tveganja je enaka $\alpha = 0.05$. S pomočjo knjižnice $scipy.stats$ izračunamo, da je 
 
-$$ F^{-1}_{Student(n-1)}(0,975) = 1.9719565442493954
+$$ F^{-1}_{Student(n-1)}(1 - \frac{0.05}{2}) = F^{-1}_{Student(n-1)}(0.975) = 1.9720
 $$
 
-Interval zaupanja je torej enak $(0.7861784621048826, 1.0938215378951173)$
+Interval zaupanja je torej enak $(0.69884, 0.98116)$.
 
-\subsection{c)}
+\subsection*{c)}
 
 Za cenilko povprečja celotne populacije bomo vzeli isto kot smo za oceno populacijskega
 povprečja pri vzorcu. 
 
-$$ \mu = \frac{1}{43886}\sum^{200}_{i=1} X_i = 0.9479332816843641
+$$ \mu = \frac{1}{43886}\sum^{200}_{i=1} X_i = 0.94793
 $$
 
-Opazimo, da se populacijsko povprečje in vzorčno povprečje ujemata zgolj v eni decimalki.
+Vzorčno povprečje primerjamo z izračunanim populacijskim povprečjem. Relativna
+ napaka vzorčnega povprečja je $11.39\%$. \\
+
 Iz vseh podatkov družin lahko izračunamo varianco števila otrok družin, s pomočjo
-katere bomo lahko ocenili kakšna je prava standardna napaka za vzorec velikosti 200.
+katere bomo lahko ocenili, kakšna je prava standardna napaka za vzorec velikosti 200.
 Ker imamo podatke celotne populacije, za cenilko variance vzamemo
 
-$$ \sigma^2 = \frac{1}{n} \sum_{i=1}^{43886} (X_i - X)^2 = 1.3391064929282408
+$$ \sigma^2 = \frac{1}{n} \sum_{i=1}^{43886} (X_i - X)^2 = 1.3391
 $$
 
-Za cenilko prave standardne napake vzamemo cenilko, najdeno v knjigi ????:
+Za cenilko prave standardne napake vzamemo cenilko, najdeno v knjigi John Rice:
+\emph{Mathematical Statistics \& Data Analysis}, str. 202-220. 
 
 $$ SE^2 = \frac{\sigma^2}{n} \cdot (\frac{N-n}{N-1}) = \frac{\sigma^2}{200} \cdot \frac{43686}{43885}
 $$
 
-Dobimo, da je prava standardna napaka ocenjena z $SE = 0.0816404987959038$. Absolutna
-napaka ocenjene standardne napake je torej ???, relativna pa ???.
+Dobimo, da je prava standardna napaka ocenjena z $SE = 0.081640$. Relativna napaka
+vzorčne standardne napake je torej 12.32\%.
 
 Opazimo, da je
 
-$$ \mu = 0.9479332816843641 \in (0.7379511969254118, 1.0620488030745883) \text{ ,}
+$$ \mu = 0.94793 \in (0.69884, 0.98116) \text{,}
 $$
 
 torej interval zaupanja iz prejšnje točke pokrije populacijsko povprečje.
 
-\subsection{d)}
+\subsection*{d)}
 
 Vzemimo še 99 vzorcev populacije velikosti 200. Določimo 95\% intervale zaupanja. 
 Glede na to, da imamo skupaj 100
 vzorcev, pričakujemo, da bo približno 95 intervalov zaupanja pokrilo populacijsko
-povprečje ($\mu = ???$). Vse skupaj ponazorimo z grafom.
+povprečje ($\mu = 0.94793$). Vse skupaj ponazorimo z grafom.
 
-% include graphics
+\begin{center}
+    \includegraphics[scale=0.7]{Intervali_zaupanja_200}
+\end{center}
 
-Ugotovimo, da ??? intervalov pokrije populacijsko povprečje.
+Ugotovimo, da 95 intervalov pokrije populacijsko povprečje, kar je tako, kot 
+smo pričakovali.
 
-\subsection{e)}
+\subsection*{e)}
 
 Za teh 99 vzorcev izračunamo še standardni odklon za vsakega posebej. 
 Za cenilko standardnega odklona vzamemo isto, kot smo jo vzeli za standardno 
-napako v prvem vzorcu; standardni odklon in standardna napaka sta namreč za ta
-primer ista. Skupaj s pravo standardno napako rezultate prikažemo z grafom.
+napako v prvem vzorcu; standardni odklon in standardna napaka sta namreč ista. 
+Skupaj s pravo standardno napako rezultate prikažemo z grafom.
 
-% include graphics
+\begin{center}
+    \includegraphics[scale=0.7]{St_napaka_200.png}
+\end{center}
 
+Največji vzorčni standardni odklon izmed stotih vzorcev je enak $0.094196$, 
+najmanjši pa $0.070726$; standardni odkloni se torej nahajajo na območju širine
+$0.023469$. Povprečje dobljenih standardnih odklonov je $0.080816$, relativna 
+napaka od prave standardne napake pa je enaka 1.010\%, kar je po mojem mnenju 
+kar dober približek pravi standardni napaki.
 
-
-\subsection{f)}
-Izvedite prejšnji dve točki še na 100 vzorcih po 800 družin. Primerjajte 
-in razložite razlike s teorijo vzorčenja.
+\subsection*{f)}
 
 Sedaj vzamemo 100 vzorcev populacije velikosti 400. Za vsak vzorec izračunamo
 interval zaupanja in standardni odklon. Ker imamo 95\% interval zaupanja, spet
 pričakujemo, da bo približno 95 intervalov pokrilo populacijsko povprečje.
 
-% include graphics
+\begin{center}
+    \includegraphics[scale=0.7]{Intervali_zaupanja_400.png}
+\end{center}
 
-Vidimo, da ??? pokrije interval.
+Sedaj imamo 96 takih intervalov zaupanja, ki pokrijejo populacijsko povprečje,
+kar je tudi tako, kot smo pričakovali. Opazimo tudi, da so velikosti intervalov
+sedaj manjše kot pri vzorcih velikosti 200.
 
 Poglejmo si še graf z ocenjenimi standardnimi odkloni.
 
-% include graphics
+\begin{center}
+    \includegraphics[scale=0.7]{St_napaka_400.png}
+\end{center}
 
-Opazimo, da je odstopanje od pravega standardnega odklona sedaj manjše kot
-pri vzorcih velikosti 200.
+Največji ocenjeni standardni odklon je velikosti  $0.063122$, najmanjši pa
+$0.050939$. Vidimo, da sta ti dve vrednosti še kar manjši od tistih dveh, izračunanih
+za vzorce velikosti 200. Razlika se opazi tudi pri širini območja ocenjenih 
+standardnih odklonov; to je velikosti $0.012183$, kar je za dvakrat manjše od
+prej izračunane širine. Povprečje dobljenih standardnih odklonov je $0.057846$, relativna 
+napaka od prave standardne napake pa je enaka 0.4330\%. Dobimo še boljši približek 
+prave standardne napake kot pri vzorcih velikosti 200.
 
+% Razlaga s teorijo vzorčenja
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Druga naloga}
+\section*{Druga naloga}
 
-\subsection{a)}
+\subsection*{a)}
 Ocenite povprečje in standardni odklon za telesno temperaturo posebej pri
 moških in posebej pri ženskah.
 
-\subsection{b)}
+\subsection*{b)}
 Za povprečji iz prejšnje točke določite 95\% intervala zaupanja.
 
-\subsection{c)}
+\subsection*{c)}
 Preizkusite domnevo, da imajo moški in ženske v povprečju enako telesno 
 temperaturo.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Tretja naloga}
+\section*{Tretja naloga}
 
 V datoteki Temp LJ se nahajajo izmerjene mesečne temperature v Ljubljani v 
 letih od 1986 do 2020. Postavimo naslednja dva modela spreminjanja temperature
@@ -196,11 +206,11 @@ s časom:
 
 Očitno je model B širši od modela A.
 
-\subsection{a)}
+\subsection*{a)}
 
 Preizkusite model A znotraj modela B.
 
-\subsection{b)}
+\subsection*{b)}
 Pri modeliranju je nevarno privzeti preširok model: lahko bi recimo postavili
 model, po katerem je temperatura vsak mesec drugačna, neidvisno od ostalih
 mesecev, a tak model bi bil neuporaben za napovedovanje. Akaikejeva 
@@ -219,6 +229,6 @@ modelov ima manjšo Akaikejevo informacijo?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Literatura}
+\section*{Literatura}
 
 \end{document}
