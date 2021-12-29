@@ -179,6 +179,39 @@ prave standardne napake kot pri vzorcih velikosti 200.
 Ocenite povprečje in standardni odklon za telesno temperaturo posebej pri
 moških in posebej pri ženskah.
 
+V datoteki \emph{TempPulz} se nahajajo podatki o temperaturi  65
+moških in 65 žensk v Fahrenheitovih stopinjah (°F). Najprej ocenimo povprečje
+temperature tako moških kot žensk. Za cenilko vzamemo cenilko, ki jo ponavadi
+uporabimo za ocenjevanja povprečja:
+
+$$ \hat{\mu}_1 = \frac{1}{65}\sum^{65}_{i=1} X_i\text{, } 
+\hat{\mu}_2 = \frac{1}{65}\sum^{65}_{i=1} Y_i  
+$$
+
+Povprečje telesne temperature moških ocenimo z $\hat{\mu}_1 = 98.10462 \text{°F} = 
+36.72479$°C, povprečje telesne temperature žensk pa z $\hat{\mu}_1 = 
+98.39385 \text{°F} = 36.88547$°C.
+
+Oceniti moramo še standardni odklon telesnih temperatur, tako žensk kot moških.
+Na predavanjih smo povedali, da za cenilko standardnega odklona, ko vemo, da
+imamo opravka z normalno porazdelitvijo, vzamemo
+
+$$ \hat{\sigma} = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (X_i - \hat{\mu})^2}\text{.}
+$$
+
+Torej za naši cenilki standardnega odklona vzamemo
+
+$$
+\hat{\sigma}_1 = \sqrt{\frac{1}{64} \sum_{i=1}^{65} (X_i - \hat{\mu}_1)^2} \text{, \qquad}
+\hat{\sigma}_2 = \sqrt{\frac{1}{64} \sum_{i=1}^{65} (Y_i - \hat{\mu}_2)^2} \text{.}
+$$
+
+Izračunamo, da je standardni odklon moških telesnih temperatur ocenjen z
+$\hat{\sigma}_1 = 0.69876\text{°F} = 0.38820$°C, ženskih pa z 
+$\hat{\sigma}_2 = 0.74349\text{°F} = 0.41305$°C.
+
+% neki o pretvorbi iz farenheitov v celzije
+
 \subsection*{b)}
 Za povprečji iz prejšnje točke določite 95\% intervala zaupanja.
 
