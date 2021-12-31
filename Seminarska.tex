@@ -68,7 +68,7 @@ Iz predavanj vemo, da je ta oblike
 $$ \mu \in (\hat{\mu} - \hat{SE}_+ \cdot F^{-1}_{Student(n-1)}(1-\frac{\alpha}{2}), \text{ }\hat{\mu} + \hat{SE}_+ \cdot F^{-1}_{Student(n-1)}(1-\frac{\alpha}{2}) ) \text{ .}
 $$
 
-Oceni za povprečno število otrok ($\hat{\mu}$) in standardno napako ($\hat{SE}_+$)
+Oceni za povprečno število otrok ($\hat{\mu}$) in standardno napako ($\hat{SE}_+$) 
 že imamo. Stopnja tveganja je enaka $\alpha = 0.05$. S pomočjo knjižnice $scipy.stats$ izračunamo, da je 
 
 $$ F^{-1}_{Student(n-1)}(1 - \frac{0.05}{2}) = F^{-1}_{Student(n-1)}(0.975) = 1.9720
@@ -176,15 +176,13 @@ prave standardne napake kot pri vzorcih velikosti 200.
 \section*{Druga naloga}
 
 \subsection*{a)}
-Ocenite povprečje in standardni odklon za telesno temperaturo posebej pri
-moških in posebej pri ženskah.
 
 V datoteki \emph{TempPulz} se nahajajo podatki o temperaturi  65
 moških in 65 žensk v Fahrenheitovih stopinjah (°F). Najprej ocenimo povprečje
 temperature tako moških kot žensk. Za cenilko vzamemo cenilko, ki jo ponavadi
 uporabimo za ocenjevanja povprečja:
 
-$$ \hat{\mu}_1 = \frac{1}{65}\sum^{65}_{i=1} X_i\text{, } 
+$$ \hat{\mu}_1 = \frac{1}{65}\sum^{65}_{i=1} X_i, \quad 
 \hat{\mu}_2 = \frac{1}{65}\sum^{65}_{i=1} Y_i  
 $$
 
@@ -213,7 +211,42 @@ $\hat{\sigma}_2 = 0.74349\text{°F} = 0.41305$°C.
 % neki o pretvorbi iz farenheitov v celzije
 
 \subsection*{b)}
-Za povprečji iz prejšnje točke določite 95\% intervala zaupanja.
+
+Sedaj poizkusimo določiti intervale zaupanja za povprečji iz prejšnje točke. Izračunali
+bomo aproksimativni in eksaktni interval zaupanja. Na predavanjih smo povedali, da je 
+aproksimativni interval zaupanja oblike
+
+$$ \Big(\hat{\mu} - \hat{SE}_+ \Phi^{-1}(1-\frac{\alpha}{2}), \quad 
+\hat{\mu} + \hat{SE}_+ \Phi^{-1}(1-\frac{\alpha}{2})\Big) \text{,}
+$$
+
+kjer je $\Phi^{-1}$ inverz komulativne funkcije normalne porazdelitve, $\hat{SE}$
+pa je srednja kvadratična napaka, definirana kot
+
+$$ \hat{SE}_+ = \frac{\hat{\sigma}}{\sqrt{n}} \text{.}
+$$
+
+Ker imamo opravka z 95\% intervali zaupanja, bo stopnja tveganja enaka $\alpha = 0.05$.
+Aproksimativni interval zaupanja telesne temperature moških je tako enak 
+$\hat{\mu}_1 \in (97.93475\text{°F}, 98.27449\text{°F}) = 
+(36.63041\text{°C}, 36.81916\text{°C})$, pri ženskih telesnih temperaturah
+pa je enak $\hat{\mu}_2 \in (98.21310\text{°F}, 98.57459\text{°F}) = 
+(36.78506\text{°C}, 36.98588\text{°C})$.
+
+Eksaktni interval zaupanja je oblike 
+
+$$ \Big(\hat{\mu} - \hat{SE}_+ \cdot F_{Student(n-1)}^{-1}(1-\frac{\alpha}{2}), \quad 
+\hat{\mu} + \hat{SE}_+ \cdot F_{Student(n-1)}^{-1}(1-\frac{\alpha}{2})\Big) \text{,}
+$$
+
+kjer je $F_{Student(n-1)}^{-1}$ inverz komulativne funkcije studentove porazdelitve z
+$n-1$ prostostnimi stopnjami.
+
+Dobimo, da je eksaktni interval moških telesnih temperatur enak 
+$\hat{\mu}_1 \in (97.93147\text{°F},$ $98.27776\text{°F}) =  
+(36.62860\text{°C}, 36.82098\text{°C})$, pri ženskih telesnih temperaturah
+pa je enak $\hat{\mu}_2 \in (98.20962\text{°F}, 98.57807\text{°F}) = 
+(36.78312\text{°C},$ $36.98782\text{°C})$.
 
 \subsection*{c)}
 Preizkusite domnevo, da imajo moški in ženske v povprečju enako telesno 

@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1640809180 "c:/Users/HP/OneDrive - Univerza v Ljubljani/Faks/3. letnik/Staty/Seminarska/Seminarska-naloga-pri-Statistiki/Seminarska.tex" "Seminarska.pdf" "Seminarska" 1640809374
+["pdflatex"] 1640963446 "c:/Users/HP/OneDrive - Univerza v Ljubljani/Faks/3. letnik/Staty/Seminarska/Seminarska-naloga-pri-Statistiki/Seminarska.tex" "Seminarska.pdf" "Seminarska" 1640963510
   "C:/Users/HP/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1636866293 9724946 6a1427bf162916ba926a83c3338d9389 ""
   "C:/Users/HP/AppData/Local/MiKTeX/pdftex/config/pdftex.map" 1638104814 82686 2381c3433487640bf26aa76a10db7eb2 ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc" 1254935040 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -87,14 +87,14 @@
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/lm/ot1lmr.fd" 1256929440 1880 bae7b659316f7344a86218ad38b01d91 ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/lm/ts1lmr.fd" 1256929440 1912 6435298ac30b512714b02d4c8c9e923c ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "Seminarska.aux" 1640809181 154 d6f8427b39e33a465e0b72e22d9f8f12 "pdflatex"
-  "Seminarska.tex" 1640809373 9499 8487a09d72edc39cbb232a5d6442b0c9 ""
-  "c:/Users/HP/OneDrive - Univerza v Ljubljani/Faks/3. letnik/Staty/Seminarska/Seminarska-naloga-pri-Statistiki/Seminarska.tex" 1640809373 9499 8487a09d72edc39cbb232a5d6442b0c9 ""
+  "Seminarska.aux" 1640963447 154 d6f8427b39e33a465e0b72e22d9f8f12 "pdflatex"
+  "Seminarska.tex" 1640963508 10983 645a0cf4e66cca73a5859414a608b815 ""
+  "c:/Users/HP/OneDrive - Univerza v Ljubljani/Faks/3. letnik/Staty/Seminarska/Seminarska-naloga-pri-Statistiki/Seminarska.tex" 1640963508 10983 645a0cf4e66cca73a5859414a608b815 ""
   "slike//Intervali_zaupanja_200.png" 1640708782 8605 b0cc003a3c519de4ad2a476233d7b52d ""
   "slike//Intervali_zaupanja_400.png" 1640708806 7974 2fe0ac59cf5eaa28b42cb2993c50fdb5 ""
   "slike//St_napaka_200.png" 1640708826 12533 d2c91dfae7a71edad5b6d15cf1722eef ""
   "slike//St_napaka_400.png" 1640708845 12719 8e0287f610a156a2f90e6aa04caf2d26 ""
   (generated)
+  "Seminarska.log"
   "Seminarska.pdf"
   "Seminarska.aux"
-  "Seminarska.log"
