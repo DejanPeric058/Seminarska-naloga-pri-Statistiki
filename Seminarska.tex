@@ -47,17 +47,17 @@ Dobimo oceno, da je povprečno število otrok v Kibergradu enako $0.8400$.
 
 Za cenilko standardne napake bomo vzeli cenilko iz predavanj. Ta je enaka 
 
-$$ \hat{SE}_+^2 = \frac{N-n}{N-1} \cdot \frac{\hat{\sigma}_+^2}{n} \text{ ,}$$
+$$ \widehat{SE}_+^2 = \frac{N-n}{N-1} \cdot \frac{\hat{\sigma}_+^2}{n} \text{ ,}$$
 
 pri čemer je $\hat{\sigma}_+^2$ enaka 
 
 $$\hat{\sigma}_+^2 = \frac{N-1}{N} \cdot \frac{1}{n-1} \sum_{i=1}^{n} (X_i - X)^2 \text{ .} $$ $$
-\hat{SE}_+^2 = \frac{N-n}{N} \cdot \frac{1}{n\cdot(n-1)} \sum_{i=1}^{n} (X_i - X)^2
+\widehat{SE}_+^2 = \frac{N-n}{N} \cdot \frac{1}{n\cdot(n-1)} \sum_{i=1}^{n} (X_i - X)^2
 $$
 
 Pri nas je $ N = 43886 $ in $ n = 200 $, torej je
 
-$$ \hat{SE}_+^2 = \frac{43686}{43886} \cdot \frac{1}{200\cdot199} \sum_{i=1}^{200} (X_i - X)^2 \text{ .}
+$$ \widehat{SE}_+^2 = \frac{43686}{43886} \cdot \frac{1}{200\cdot199} \sum_{i=1}^{200} (X_i - X)^2 \text{ .}
 $$
 
 Izračunamo, da je standardna napaka enaka $ 0.071584 $.
@@ -65,10 +65,10 @@ Izračunamo, da je standardna napaka enaka $ 0.071584 $.
 Sedaj s pomočjo studentove porazdelitve izračunajmo eksakten 95\% interval zaupanja.
 Iz predavanj vemo, da je ta oblike
 
-$$ \mu \in (\hat{\mu} - \hat{SE}_+ \cdot F^{-1}_{Student(n-1)}(1-\frac{\alpha}{2}), \text{ }\hat{\mu} + \hat{SE}_+ \cdot F^{-1}_{Student(n-1)}(1-\frac{\alpha}{2}) ) \text{ .}
+$$ \mu \in (\hat{\mu} - \widehat{SE}_+ \cdot F^{-1}_{Student(n-1)}(1-\frac{\alpha}{2}), \text{ }\hat{\mu} + \widehat{SE}_+ \cdot F^{-1}_{Student(n-1)}(1-\frac{\alpha}{2}) ) \text{ .}
 $$
 
-Oceni za povprečno število otrok ($\hat{\mu}$) in standardno napako ($\hat{SE}_+$) 
+Oceni za povprečno število otrok ($\hat{\mu}$) in standardno napako ($\widehat{SE}_+$) 
 že imamo. Stopnja tveganja je enaka $\alpha = 0.05$. S pomočjo knjižnice $scipy.stats$ izračunamo, da je 
 
 $$ F^{-1}_{Student(n-1)}(1 - \frac{0.05}{2}) = F^{-1}_{Student(n-1)}(0.975) = 1.9720
@@ -214,16 +214,16 @@ $\hat{\sigma}_2 = 0.74349\text{°F} = 0.41305$°C.
 
 Sedaj poizkusimo določiti intervale zaupanja za povprečji iz prejšnje točke. Izračunali
 bomo aproksimativni in eksaktni interval zaupanja. Na predavanjih smo povedali, da je 
-aproksimativni interval zaupanja oblike
+aproksimativni interval zaupanja oblike  
 
-$$ \Big(\hat{\mu} - \hat{SE}_+ \Phi^{-1}(1-\frac{\alpha}{2}), \quad 
-\hat{\mu} + \hat{SE}_+ \Phi^{-1}(1-\frac{\alpha}{2})\Big) \text{,}
+$$ \Big(\hat{\mu} - \widehat{SE}_+ \Phi^{-1}(1-\frac{\alpha}{2}), \quad 
+\hat{\mu} + \widehat{SE}_+ \Phi^{-1}(1-\frac{\alpha}{2})\Big) \text{,}
 $$
 
-kjer je $\Phi^{-1}$ inverz komulativne funkcije normalne porazdelitve, $\hat{SE}$
+kjer je $\Phi^{-1}$ inverz komulativne funkcije normalne porazdelitve, $\widehat{SE}$
 pa je srednja kvadratična napaka, definirana kot
 
-$$ \hat{SE}_+ = \frac{\hat{\sigma}}{\sqrt{n}} \text{.}
+$$ \widehat{SE}_+ = \frac{\hat{\sigma}}{\sqrt{n}} \text{.}
 $$
 
 Ker imamo opravka z 95\% intervali zaupanja, bo stopnja tveganja enaka $\alpha = 0.05$.
@@ -235,8 +235,8 @@ pa je enak $\hat{\mu}_2 \in (98.21310\text{°F}, 98.57459\text{°F}) =
 
 Eksaktni interval zaupanja je oblike 
 
-$$ \Big(\hat{\mu} - \hat{SE}_+ \cdot F_{Student(n-1)}^{-1}(1-\frac{\alpha}{2}), \quad 
-\hat{\mu} + \hat{SE}_+ \cdot F_{Student(n-1)}^{-1}(1-\frac{\alpha}{2})\Big) \text{,}
+$$ \Big(\hat{\mu} - \widehat{SE}_+ \cdot F_{Student(n-1)}^{-1}(1-\frac{\alpha}{2}), \quad 
+\hat{\mu} + \widehat{SE}_+ \cdot F_{Student(n-1)}^{-1}(1-\frac{\alpha}{2})\Big) \text{,}
 $$
 
 kjer je $F_{Student(n-1)}^{-1}$ inverz komulativne funkcije studentove porazdelitve z
@@ -252,6 +252,63 @@ pa je enak $\hat{\mu}_2 \in (98.20962\text{°F}, 98.57807\text{°F}) =
 Preizkusite domnevo, da imajo moški in ženske v povprečju enako telesno 
 temperaturo.
 
+Sedaj bomo preizkusili domnevo, da imajo moški in ženske v povprečju enako
+telesno temperaturo. Za ničelno domnevo $H_0$ bomo vzeli $H_0 : \mu_1 = \mu_2$.
+Privzeli smo, da sta temperaturi pri moških in ženskah porazdeljeni normalno, 
+torej je 
+
+$$\hat{\mu_1} \sim N\Big(\mu_1, \frac{\sigma_1^2}{65}\Big) \quad \text{in} 
+\quad \hat{\mu_2} \sim N\Big(\mu_2, \frac{\sigma_2^2}{65}\Big)$$\text{.}
+
+Sledi, da je 
+
+$$\hat{\mu_1} - \hat{\mu_2} \sim N\Big(\mu_1 - \mu_2, \frac{\sigma_1^2 + 
+\sigma_2^2}{65}\Big) \text{,}
+$$
+
+oziroma
+
+$$ \frac{(\hat{\mu_1} - \hat{\mu_2}) - (\mu_1 - \mu_2)}
+{\sqrt{\frac{\sigma_1^2 + \sigma_2^2}{65}}}
+\sim N\big(0, 1\big) \text{.}
+$$ 
+
+Težava je v tem, da $\sigma_1$ in $\sigma_2$ ne poznamo, poznamo pa približka
+izračunana v prvi točki: $\hat{\sigma_1}$ $\hat{\sigma_2}$. Na predavanjih
+smo povedali, da lahko imenovalec
+zamenjamo s približkom ${\sqrt{\frac{\hat{\sigma}_1^2 + \hat{\sigma}_2^2}{65}}} $, 
+vendar moramo normalno porazdelitev $N(0,1)$ zamenjati s Studentovo porazdelitvijo
+z $n-1$ prostostnimi stopnjami ($Student(n-1)$). Tako imamo test T;
+
+$$T = \frac{(\hat{\mu_1} - \hat{\mu_2}) - (\mu_1 - \mu_2)}
+{\sqrt{\frac{\hat{\sigma}_1^2 + \hat{\sigma}_2^2}{65}}}
+\sim Student(64)
+$$ \text{.}
+
+Če upoštevamo ničelno domnevo $H_0 : \mu_1 = \mu_2$, je $T = \frac{(\hat{\mu_1}
+ - \hat{\mu_2})} {\sqrt{\frac{\hat{\sigma}_1^2 + \hat{\sigma}_2^2}{65}}}$. Ker 
+smo povprečji in standardna odklona ocenili že pri prvi točki, lahko izračunamo
+vrednost testa $T$:
+
+$$T = -2.28543 \text{, } \qquad |T| = 2.28543 \text{.}
+$$
+
+Hipotezo bomo preverili pri stopnjah tveganja $\alpha = 0.05$ in $\alpha = 0.01$.
+Ničelno domnevo bomo zavrnili, če bo 
+$$|T| \geq F^{-1}_{Student(64)}(1-\frac{\alpha}{2}) \text{.}
+$$ 
+Pri $\alpha = 0.05$ bomo imeli $|T| = 2.28543 \geq 1.99773$, tako da tu ničelno
+domnevo zavrnemo. Za $\alpha = 0.01$ pa dobimo, da je $|T| = 2.28543 < 2.65485$,
+torej tu domnevo sprejmemo.
+Ker iz meritev vidimo, da bo kvečjemu telesna temperatura žensk v povprečju 
+višja od moških, bomo naredili še enostranski test. Ničelno domnevo bomo zavrnili, 
+če bo 
+$$T \leq - F^{-1}_{Student(64)}(1-\alpha) = F^{-1}_{Student(64)}(\alpha) \text{.}
+$$
+
+Za $\alpha = 0.05$ izračunamo, da je $T = -2.28543 \leq -1.66901$, torej ničelno domnevo 
+zavrnemo. Pri $\alpha = 0.01$ dobimo, da je $T = -2.28543 > -2.38604$, tako da 
+ničelno domnevo sprejmemo. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
