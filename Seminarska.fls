@@ -154,9 +154,9 @@ INPUT ./slike/St_napaka_400.png
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmr.fd
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmr.fd
 INPUT c:/Users/User/OneDrive - Univerza v Ljubljani/Faks/3. letnik/Staty/Seminarska/Seminarska-naloga-pri-Statistiki/Seminarska.aux
-INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb
@@ -164,8 +164,6 @@ INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmex
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb
-INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb
-INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb
 INPUT C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb
