@@ -17,7 +17,7 @@
 
 \title{Seminarska naloga iz Statistike}
 \author{Dejan Perić \\~ \\ }
-
+ 
 
 \date{\today}
 
@@ -336,6 +336,24 @@ Očitno je model B širši od modela A.
 
 Preizkusite model A znotraj modela B.
 
+V datoteki Temp LJ smo dobili podatke o mesečnih temperaturah izmerjenih
+v Ljubljani od leta 1986 do leta 2020. Najprej si bomo za predstavo narisali 
+graf iz danih podatkov:
+
+%include graphics
+
+Vidimo, da graf izgleda nekako tako, kot pravi model A: graf kot celota se z
+rahlim naklonom linearno dviga, zraven pa vsako leto graf 'sinusno' zaniha.
+
+Za vsako leto izračunajmo povprečno temperaturo in si poglejmo, kako bo to 
+izgledalo na grafu.
+
+%include graphics
+
+Vidimo, da se povprečne letne temperature gibljejo okoli neke premice, ki se 
+z rahlim naklonom dviga. Po metodi najmanjših kvadratov izračunajmo, katera je 
+premica, ki se najbolj prilega. 
+
 \subsection*{b)}
 Pri modeliranju je nevarno privzeti preširok model: lahko bi recimo postavili
 model, po katerem je temperatura vsak mesec drugačna, neidvisno od ostalih
@@ -343,7 +361,7 @@ mesecev, a tak model bi bil neuporaben za napovedovanje. Akaikejeva
 informacija nam pomaga poiskati optimalni model – izberemo tistega, za katerega
 je le-ta najmanjša. Akaikejeva informacija je sicer definirana z verjetjem, 
 a pri linearni regresiji in Gaussovem modelu je le-ta ekvivalentna naslednji 
-modifikaciji:
+modifikaciji:  
 
 \[
     \text{AIC} := 2m + n \ln \text{RSS,}
