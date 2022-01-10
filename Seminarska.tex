@@ -70,7 +70,8 @@ $$ \mu \in (\hat{\mu} - \widehat{SE}_+ \cdot F^{-1}_{Student(n-1)}(1-\frac{\alph
 $$
 
 Oceni za povprečno število otrok ($\hat{\mu}$) in standardno napako ($\widehat{SE}_+$) 
-že imamo. Stopnja tveganja je enaka $\alpha = 0.05$. S pomočjo knjižnice $scipy.stats$ izračunamo, da je 
+že imamo. Stopnja tveganja je enaka $\alpha = 0.05$. V pythonu imamo knjižnico
+\emph{scipy.stats}, s pomočjo katere izračunamo, da je 
 
 $$ F^{-1}_{Student(n-1)}(1 - \frac{0.05}{2}) = F^{-1}_{Student(n-1)}(0.975) = 1.9720
 $$
@@ -86,7 +87,7 @@ $$ \mu = \frac{1}{43886}\sum^{200}_{i=1} X_i = 0.94793
 $$
 
 Vzorčno povprečje primerjamo z izračunanim populacijskim povprečjem. Relativna
- napaka vzorčnega povprečja je $11.39\%$. \\
+ napaka vzorčnega povprečja je $11.39\%$. 
 
 Iz vseh podatkov družin lahko izračunamo varianco števila otrok družin, s pomočjo
 katere bomo lahko ocenili, kakšna je prava standardna napaka za vzorec velikosti 200.
@@ -119,7 +120,7 @@ vzorcev, pričakujemo, da bo približno 95 intervalov zaupanja pokrilo populacij
 povprečje ($\mu = 0.94793$). Vse skupaj ponazorimo z grafom.
 
 \begin{center}
-    \includegraphics[scale=0.5]{Intervali_zaupanja_200}
+    \includegraphics[scale=0.7]{Intervali_zaupanja_200}
 \end{center}
 
 Ugotovimo, da 95 intervalov pokrije populacijsko povprečje, kar je tako, kot 
@@ -133,7 +134,7 @@ napako v prvem vzorcu; standardni odklon in standardna napaka sta namreč ista.
 Skupaj s pravo standardno napako rezultate prikažemo z grafom.
 
 \begin{center}
-    \includegraphics[scale=0.5]{St_napaka_200.png}
+    \includegraphics[scale=0.7]{St_napaka_200.png}
 \end{center}
   
 Največji vzorčni standardni odklon izmed stotih vzorcev je enak $0.094196$, 
@@ -144,12 +145,12 @@ kar dober približek pravi standardni napaki.
 
 \subsection*{f)}
 
-Sedaj vzamemo 100 vzorcev populacije velikosti 400. Za vsak vzorec izračunamo
+Sedaj vzamemo 100 vzorcev populacije velikosti 400. Za vsak vzorec \\izračunamo
 interval zaupanja in standardni odklon. Ker imamo 95\% interval zaupanja, spet
 pričakujemo, da bo približno 95 intervalov pokrilo populacijsko povprečje.
 
 \begin{center}
-    \includegraphics[scale=0.5]{Intervali_zaupanja_400.png}
+    \includegraphics[scale=0.7]{Intervali_zaupanja_400.png}
 \end{center}
 
 Sedaj imamo 96 takih intervalov zaupanja, ki pokrijejo populacijsko povprečje,
@@ -159,11 +160,11 @@ sedaj manjše kot pri vzorcih velikosti 200.
 Poglejmo si še graf z ocenjenimi standardnimi odkloni.
 
 \begin{center}
-    \includegraphics[scale=0.5]{St_napaka_400.png}
+    \includegraphics[scale=0.7]{St_napaka_400.png}
 \end{center}
 
 Največji ocenjeni standardni odklon je velikosti  $0.063122$, najmanjši pa
-$0.050939$. Vidimo, da sta ti dve vrednosti še kar manjši od tistih dveh, izračunanih
+\\$0.050939$. Vidimo, da sta ti dve vrednosti še kar manjši od tistih dveh, izračunanih
 za vzorce velikosti 200. Razlika se opazi tudi pri širini območja ocenjenih 
 standardnih odklonov; to je velikosti $0.012183$, kar je za dvakrat manjše od
 prej izračunane širine. Povprečje dobljenih standardnih odklonov je $0.057846$, relativna 
@@ -187,7 +188,7 @@ $$ \hat{\mu}_1 = \frac{1}{65}\sum^{65}_{i=1} X_i, \quad
 \hat{\mu}_2 = \frac{1}{65}\sum^{65}_{i=1} Y_i  
 $$
 
-Povprečje telesne temperature moških ocenimo z $\hat{\mu}_1 = 98.10462 \text{°F} = 
+Povprečje telesne temperature moških ocenimo z $\hat{\mu}_1 = 98.10462 \text{°F} = \\
 36.72479$°C, povprečje telesne temperature žensk pa z $\hat{\mu}_1 = 
 98.39385 \text{°F} = 36.88547$°C.
 
@@ -243,7 +244,7 @@ $$
 kjer je $F_{Student(n-1)}^{-1}$ inverz komulativne funkcije studentove porazdelitve z
 $n-1$ prostostnimi stopnjami.
 
-Dobimo, da je eksaktni interval moških telesnih temperatur enak 
+Dobimo, da je eksaktni interval moških telesnih temperatur enak \\
 $\hat{\mu}_1 \in (97.93147\text{°F},$ $98.27776\text{°F}) =  
 (36.62860\text{°C}, 36.82098\text{°C})$, pri ženskih telesnih temperaturah
 pa je enak $\hat{\mu}_2 \in (98.20962\text{°F}, 98.57807\text{°F}) = 
@@ -318,31 +319,14 @@ ničelno domnevo sprejmemo.
 
 \section*{Tretja naloga}
 
-V datoteki Temp LJ se nahajajo izmerjene mesečne temperature v Ljubljani v 
-letih od 1986 do 2020. Postavimo naslednja dva modela spreminjanja temperature
-s časom: 
-
-\begin{itemize}
-     
-    \item Model A: vključuje linearni trend in sinusno nihanje s periodo eno 
-        leto.
-    \item Model B: vključuje linearni trend in spreminjanje temperature za 
-        vsak mesec posebej.
-
-\end{itemize}
-
-Očitno je model B širši od modela A.
-
 \subsection*{a)}
-
-Preizkusite model A znotraj modela B.
 
 V datoteki Temp\_LJ smo dobili podatke o mesečnih temperaturah izmerjenih
 v Ljubljani od leta 1986 do leta 2020. Najprej si bomo za predstavo narisali 
 graf iz danih podatkov:
 
 \begin{center}
-    \includegraphics[scale=0.5]{Naloga_3_01}
+    \includegraphics[scale=0.7]{Naloga_3_01}
 \end{center}
 
 Vidimo, da graf izgleda nekako tako, kot pravi model A: graf kot celota se z
@@ -352,7 +336,7 @@ Za vsako leto izračunajmo povprečno temperaturo in si poglejmo, kako bo to
 izgledalo na grafu.
 
 \begin{center}
-    \includegraphics[scale=0.5]{Naloga_3_02}
+    \includegraphics[scale=0.7]{Naloga_3_02}
 \end{center}
 
 Vidimo, da se povprečne letne temperature gibljejo okoli neke premice, ki se 
@@ -370,7 +354,7 @@ $a = 0.064636$ in $b = -118.20895$, ki nama podata linearno funkcijo
 $\hat{Y}_i = 0.064636 \cdot i - 118.20895$. 
 
 \begin{center}
-    \includegraphics[scale=0.5]{Naloga_3_03}
+    \includegraphics[scale=0.7]{Naloga_3_03}
 \end{center}
 
 Iz slike ocenimo, da se premica kar dobro prilega letnim povprečnim temperaturam 
@@ -389,7 +373,7 @@ predpostavljamo, da ko jih bomo predstavili v histogramu, bodo po centralnem lim
 izreku zavzeli obliko normalne porazdelitve s standardnim odklonom $\hat{\sigma}_+$.
 
 \begin{center}
-    \includegraphics[scale=0.5]{Naloga_3_04}
+    \includegraphics[scale=0.7]{Naloga_3_04}
 \end{center}
 
 Sicer imamo dokaj malo 'meritev', vendar lahko vidimo, da stolpci zavzamejo približno 
@@ -440,7 +424,7 @@ dva koeficienta ista kot pri linearnem modelu. Poglejmo si, kako stvar izgleda
 na sliki.
 
 \begin{center}
-    \includegraphics[scale=0.5]{Naloga_3_05}
+    \includegraphics[scale=0.7]{Naloga_3_05}
 \end{center}
 
 Sicer ne moremo prav dobro reči, vendar se nam zdi, da se model kar dobro prilega 
@@ -484,7 +468,7 @@ Po metodi najmanjših kvadratov določimo, da je $\boldsymbol{\beta} = [1.35754,
 -2685.209, $ $-5.52345, -8.93405, -0.04750, -0.06024]$. 
 
 \begin{center}
-    \includegraphics[scale=0.5]{Naloga_3_08}
+    \includegraphics[scale=0.7]{Naloga_3_08}
 \end{center}
 
 Model se na pogled dobro prilega. Izračunamo, da je standardni odklon pri tem 
@@ -499,7 +483,7 @@ Spet vidimo, da histogram rezidualov zavzame obliko gostote normalne porazdelitv
 z ocenjeno varianco. Sedaj primerjajmo še kvadratne reziduale obeh modelov. 
 
 \begin{center}
-    \includegraphics[scale=0.5]{Naloga_3_11}
+    \includegraphics[scale=0.7]{Naloga_3_11}
 \end{center}
 
 Vidimo, da model A ne odstopa preveč glede rezidualov, na pogled izgleda, da imata 
@@ -527,7 +511,7 @@ $$
 
 sicer pa jo sprejmemo. Izračunamo, da je $F = 4.67718$. Pri stopnji tveganja 
 $\alpha = 0.05$ je desna stran v testu enaka $19.49331$, pri stopnji tveganja 
-$\alpha = 0.01$ pa je desna stran enaka $99.49675$. Torej v obeh primerih 
+$\alpha = 0.01$ pa je desna stran enaka $99.49675$. Torej v obeh stopnji tveganja 
 sprejmemo ničelno domnevo, sprejmemo model A znotraj modela B.
 
 \subsection*{b)}
@@ -543,12 +527,20 @@ modifikaciji:
     \text{AIC} := 2m + n \ln \text{RSS,}
     \]
 
-kjer je m število parametrov, n pa je število opažanj. Kateri od zgornjih dveh
-modelov ima manjšo Akaikejevo informacijo?
+kjer je m število parametrov, n pa je število opažanj. Izračunajmo akaikejevo 
+informacijo za naša dva modela. Za model A dobimo AIC$_A = 3005.77677$, za 
+model B pa AIC$_B = 3000.39246$. Sklepamo, da za napovedovanje raje uporabimo 
+model B.
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{Literatura}
+
+\begin{thebibliography}{99}
+    \bibitem{Rice} J. A.~Rice, \emph{Mathematical Statistics and Data Analysis, Third Edition}, Thomson Brooks/Cole, Duxbury, 2007
+\end{thebibliography}
+
 
 \end{document}
