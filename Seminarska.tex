@@ -134,7 +134,7 @@ Skupaj s pravo standardno napako rezultate prikažemo z grafom.
 \begin{center}
     \includegraphics[scale=0.7]{St_napaka_200.png}
 \end{center}
-
+  
 Največji vzorčni standardni odklon izmed stotih vzorcev je enak $0.094196$, 
 najmanjši pa $0.070726$; standardni odkloni se torej nahajajo na območju širine
 $0.023469$. Povprečje dobljenih standardnih odklonov je $0.080816$, relativna 
@@ -336,11 +336,13 @@ Očitno je model B širši od modela A.
 
 Preizkusite model A znotraj modela B.
 
-V datoteki Temp LJ smo dobili podatke o mesečnih temperaturah izmerjenih
+V datoteki Temp\_LJ smo dobili podatke o mesečnih temperaturah izmerjenih
 v Ljubljani od leta 1986 do leta 2020. Najprej si bomo za predstavo narisali 
 graf iz danih podatkov:
 
-%include graphics
+\begin{center}
+    \includegraphics[scale=0.7]{Naloga_3_01}
+\end{center}
 
 Vidimo, da graf izgleda nekako tako, kot pravi model A: graf kot celota se z
 rahlim naklonom linearno dviga, zraven pa vsako leto graf 'sinusno' zaniha.
@@ -348,11 +350,76 @@ rahlim naklonom linearno dviga, zraven pa vsako leto graf 'sinusno' zaniha.
 Za vsako leto izračunajmo povprečno temperaturo in si poglejmo, kako bo to 
 izgledalo na grafu.
 
-%include graphics
+\begin{center}
+    \includegraphics[scale=0.7]{Naloga_3_02}
+\end{center}
 
 Vidimo, da se povprečne letne temperature gibljejo okoli neke premice, ki se 
 z rahlim naklonom dviga. Po metodi najmanjših kvadratov izračunajmo, katera je 
-premica, ki se najbolj prilega. 
+premica, ki se najbolj prilega. Za to bomo potrebovali knjižnico \emph{np.linalg},
+iz katere bomo uporabili funkcijo \emph lstsq() (least squares). Uporabili 
+bomo linearni model
+
+$$ Y_i = a \cdot i + b + \epsilon_i, \quad i = 1986, 1987, \dots, 2020 \text{,}
+$$
+
+kjer so $\epsilon_i$ napake oz šumi, ki naj bi bili porazdeljeni normalno 
+($\epsilon \sim N(0, \sigma^2)$). Kot rezultat dobimo koeficienta 
+$a = 0.064636$ in $b = -118.20895$, ki nama podata linearno funkcijo 
+$\hat{Y}_i = 0.064636 \cdot i - 118.20895$. 
+
+\begin{center}
+    \includegraphics[scale=0.7]{Naloga_3_03}
+\end{center}
+
+Iz slike ocenimo, da se premica kar dobro prilega letnim povprečnim temperaturam 
+in da odstopanja niso prevelika. Funkcija \emph lstsq nam poleg koeficientov vrne
+tudi vrednost RSS $= \sum \hat{\epsilon}_i$, kjer imamo reziduale $\hat{\epsilon}_i
+ = Y_i - \hat{Y}_i$. Če poznamo $RSS$, znamo oceniti standardni odklon za slučajno
+ spremenljivko $\epsilon_i$. Na predavanjih smo povedali, da je ocena 
+ 
+$$ \hat{\sigma}^2_+ = \frac{\text{RSS}}{n-p} \text{,}
+$$
+
+kjer je $n$ število meritev, p pa število iskanih parametrov (v tem primeru $n = 35$,
+$p=2$). Izračunamo, da je $\hat{\sigma}_+ = 0.53218$. Predpostavljamo tudi, da so si
+slučajne spremenljivke $\epsilon_i, i = 1, 2, \dots 35$ med seboj neodvisne. Iz tega 
+predpostavljamo, da ko jih bomo predstavili v histogramu, bodo po centralnem limitnem 
+izreku zavzeli obliko normalne porazdelitve s standardnim odklonom $\hat{\sigma}_+$.
+
+\begin{center}
+    \includegraphics[scale=0.7]{Naloga_3_04}
+\end{center}
+
+Sicer imamo dokaj malo 'meritev', vendar lahko vidimo, da stolpci zavzamejo približno 
+obliko gostote normalne porazdelitve z ocenjenim standardnim odklonom $\hat{\sigma}_+$.
+
+Vzemimo sedaj model A, ki nam ga podaja naloga:
+
+\[
+    Y_{ij} = \beta_1 \cdot i + \beta_2 + \beta_3 \cdot \sin \Big(\frac{2\pi j}{12}\Big) 
+    + \beta_4 \cdot \cos \Big(\frac{2\pi j}{12}\Big) \text{,}
+\]
+
+kjer je $i=1986,\dots,2020$ in $j=1,2,\dots,12$. Indeks $i$ torej pomeni leto, indeks 
+$j$ pa mesec. Spremenljivko za zaporedni mesec imamo tako v funkciji sinus in cosinus, 
+perioda pa je 12 mesecev. 
+Načeloma bi lahko vzeli tudi samo sinus z nekim faznim zamikom ($\beta_3 \cdot\sin 
+\big(\frac{2\pi j}{12} + \delta \big)$), vendar potem 
+ne bi imeli linearne regresije in ne bi znali izračunati parametrov po metodi najmanjših 
+kvadratov; parameter $\delta$ bi nastopal znotraj nelinearne funkcije.
+Linearno regresijo lahko zapišemo v splošni matrični obliki
+
+$$ Y = X\beta + \epsilon \text{,}
+$$
+
+kjer je $\beta$ neznan vektor koeficientov (pri nas $\beta = [\beta_1, \beta_2, \beta_3,
+\beta_4]$), $Y$ opazljiv slučajni vektor, $\epsilon$ slučajni vektor šumov, 
+$X$ pa konstantna matrika, sestavljena iz izmerjenih podatkov. Pri nas bo 
+izgledala takole
+
+
+
 
 \subsection*{b)}
 Pri modeliranju je nevarno privzeti preširok model: lahko bi recimo postavili
