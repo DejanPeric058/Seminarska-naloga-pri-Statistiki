@@ -4,7 +4,7 @@
 \usepackage{amsmath, amsfonts, amsthm, url, amssymb}
 \usepackage{lmodern}
 \usepackage{graphicx}
-\usepackage{subfigure}
+\usepackage{subcaption}
 \usepackage[shortlabels]{enumitem}
 \graphicspath{ {./slike/} }
 \setlength{\parindent}{0cm}
@@ -35,7 +35,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Prva naloga}
-    
+
 \subsection*{a)}
 
 Izmed 43886 družin izberemo vzorec družin velikosti 200. Vzorce bomo pridobivali s pomočjo $sample$ iz knjižnice $random$. Za cenilko povprečnega števila otrok bomo vzeli cenilko
@@ -52,13 +52,14 @@ $$ \widehat{SE}_+^2 = \frac{N-n}{N-1} \cdot \frac{\hat{\sigma}_+^2}{n} \text{ ,}
 
 pri čemer je $\hat{\sigma}_+^2$ enaka 
 
-$$\hat{\sigma}_+^2 = \frac{N-1}{N} \cdot \frac{1}{n-1} \sum_{i=1}^{n} (X_i - X)^2 \text{ .} $$ $$
-\widehat{SE}_+^2 = \frac{N-n}{N} \cdot \frac{1}{n\cdot(n-1)} \sum_{i=1}^{n} (X_i - X)^2
+$$\hat{\sigma}_+^2 = \frac{N-1}{N} \cdot \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})^2 \text{ .} $$ 
+$$
+\widehat{SE}_+^2 = \frac{N-n}{N} \cdot \frac{1}{n\cdot(n-1)} \sum_{i=1}^{n} (X_i - \bar{X})^2
 $$
 
 Pri nas je $ N = 43886 $ in $ n = 200 $, torej je
 
-$$ \widehat{SE}_+^2 = \frac{43686}{43886} \cdot \frac{1}{200\cdot199} \sum_{i=1}^{200} (X_i - X)^2 \text{ .}
+$$ \widehat{SE}_+^2 = \frac{43686}{43886} \cdot \frac{1}{200\cdot199} \sum_{i=1}^{200} (X_i - \bar{X})^2 \text{ .}
 $$
 
 Izračunamo, da je standardna napaka enaka $ 0.071584 $.
@@ -93,7 +94,7 @@ Iz vseh podatkov družin lahko izračunamo varianco števila otrok družin, s po
 katere bomo lahko ocenili, kakšna je prava standardna napaka za vzorec velikosti 200.
 Ker imamo podatke celotne populacije, za cenilko variance vzamemo
 
-$$ \sigma^2 = \frac{1}{n} \sum_{i=1}^{43886} (X_i - X)^2 = 1.3391
+$$ \sigma^2 = \frac{1}{n} \sum_{i=1}^{43886} (X_i - \bar{X})^2 = 1.3391
 $$
 
 Za cenilko prave standardne napake vzamemo cenilko, najdeno v knjigi John Rice:
@@ -434,9 +435,19 @@ reziduali in histogram rezidualov, na katerega narišemo še graf gostote normal
 porazdelitve z varianco $\hat{\sigma}_+^2$.
 
 \begin{figure}[h]
-    \subfigure[]{\includegraphics[scale=0.5]{Naloga_3_06}} 
-    \subfigure[]{\includegraphics[scale=0.5]{Naloga_3_07}} 
+    \begin{subfigure}{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Naloga_3_06}
+	\end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Naloga_3_07}
+	\end{subfigure}
 \end{figure}
+%\begin{figure}[h]
+%    \subfigure[]{\includegraphics[scale=0.5]{Naloga_3_06}} 
+%    \subfigure[]{\includegraphics[scale=0.5]{Naloga_3_07}} 
+%\end{figure}
 
 Vidimo, da se histogram rezidualov modela A dokaj lepo prilega ustrezni 
 normalni porazdelitvi.
@@ -474,13 +485,19 @@ Po metodi najmanjših kvadratov določimo, da je $\boldsymbol{\beta} = [1.35754,
 Model se na pogled dobro prilega. Izračunamo, da je standardni odklon pri tem 
 modelu ocenjen z $\hat{\sigma}_+ = 1.72405$. 
 
-\begin{figure}[h]
-    \subfigure[]{\includegraphics[scale=0.5]{Naloga_3_09}} 
-    \subfigure[]{\includegraphics[scale=0.5]{Naloga_3_10}}   
+\begin{figure}[!h]
+    \begin{subfigure}{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Naloga_3_09}
+	\end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Naloga_3_10}
+	\end{subfigure}
 \end{figure}
 
 Spet vidimo, da histogram rezidualov zavzame obliko gostote normalne porazdelitve 
-z ocenjeno varianco. Sedaj primerjajmo še kvadratne reziduale obeh modelov. 
+z ocenjeno varianco. Zraven primerjajmo še kvadratne reziduale obeh modelov. 
 
 \begin{center}
     \includegraphics[scale=0.7]{Naloga_3_11}
