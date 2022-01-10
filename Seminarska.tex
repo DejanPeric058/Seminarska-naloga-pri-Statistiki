@@ -4,6 +4,7 @@
 \usepackage{amsmath, amsfonts, amsthm, url, amssymb}
 \usepackage{lmodern}
 \usepackage{graphicx}
+\usepackage{subfigure}
 \usepackage[shortlabels]{enumitem}
 \graphicspath{ {./slike/} }
 \setlength{\parindent}{0cm}
@@ -118,7 +119,7 @@ vzorcev, pričakujemo, da bo približno 95 intervalov zaupanja pokrilo populacij
 povprečje ($\mu = 0.94793$). Vse skupaj ponazorimo z grafom.
 
 \begin{center}
-    \includegraphics[scale=0.7]{Intervali_zaupanja_200}
+    \includegraphics[scale=0.5]{Intervali_zaupanja_200}
 \end{center}
 
 Ugotovimo, da 95 intervalov pokrije populacijsko povprečje, kar je tako, kot 
@@ -132,7 +133,7 @@ napako v prvem vzorcu; standardni odklon in standardna napaka sta namreč ista.
 Skupaj s pravo standardno napako rezultate prikažemo z grafom.
 
 \begin{center}
-    \includegraphics[scale=0.7]{St_napaka_200.png}
+    \includegraphics[scale=0.5]{St_napaka_200.png}
 \end{center}
   
 Največji vzorčni standardni odklon izmed stotih vzorcev je enak $0.094196$, 
@@ -148,7 +149,7 @@ interval zaupanja in standardni odklon. Ker imamo 95\% interval zaupanja, spet
 pričakujemo, da bo približno 95 intervalov pokrilo populacijsko povprečje.
 
 \begin{center}
-    \includegraphics[scale=0.7]{Intervali_zaupanja_400.png}
+    \includegraphics[scale=0.5]{Intervali_zaupanja_400.png}
 \end{center}
 
 Sedaj imamo 96 takih intervalov zaupanja, ki pokrijejo populacijsko povprečje,
@@ -158,7 +159,7 @@ sedaj manjše kot pri vzorcih velikosti 200.
 Poglejmo si še graf z ocenjenimi standardnimi odkloni.
 
 \begin{center}
-    \includegraphics[scale=0.7]{St_napaka_400.png}
+    \includegraphics[scale=0.5]{St_napaka_400.png}
 \end{center}
 
 Največji ocenjeni standardni odklon je velikosti  $0.063122$, najmanjši pa
@@ -341,7 +342,7 @@ v Ljubljani od leta 1986 do leta 2020. Najprej si bomo za predstavo narisali
 graf iz danih podatkov:
 
 \begin{center}
-    \includegraphics[scale=0.7]{Naloga_3_01}
+    \includegraphics[scale=0.5]{Naloga_3_01}
 \end{center}
 
 Vidimo, da graf izgleda nekako tako, kot pravi model A: graf kot celota se z
@@ -351,7 +352,7 @@ Za vsako leto izračunajmo povprečno temperaturo in si poglejmo, kako bo to
 izgledalo na grafu.
 
 \begin{center}
-    \includegraphics[scale=0.7]{Naloga_3_02}
+    \includegraphics[scale=0.5]{Naloga_3_02}
 \end{center}
 
 Vidimo, da se povprečne letne temperature gibljejo okoli neke premice, ki se 
@@ -369,7 +370,7 @@ $a = 0.064636$ in $b = -118.20895$, ki nama podata linearno funkcijo
 $\hat{Y}_i = 0.064636 \cdot i - 118.20895$. 
 
 \begin{center}
-    \includegraphics[scale=0.7]{Naloga_3_03}
+    \includegraphics[scale=0.5]{Naloga_3_03}
 \end{center}
 
 Iz slike ocenimo, da se premica kar dobro prilega letnim povprečnim temperaturam 
@@ -388,7 +389,7 @@ predpostavljamo, da ko jih bomo predstavili v histogramu, bodo po centralnem lim
 izreku zavzeli obliko normalne porazdelitve s standardnim odklonom $\hat{\sigma}_+$.
 
 \begin{center}
-    \includegraphics[scale=0.7]{Naloga_3_04}
+    \includegraphics[scale=0.5]{Naloga_3_04}
 \end{center}
 
 Sicer imamo dokaj malo 'meritev', vendar lahko vidimo, da stolpci zavzamejo približno 
@@ -398,7 +399,7 @@ Vzemimo sedaj model A, ki nam ga podaja naloga:
 
 \[
     Y_{ij} = \beta_1 \cdot i + \beta_2 + \beta_3 \cdot \sin \Big(\frac{2\pi j}{12}\Big) 
-    + \beta_4 \cdot \cos \Big(\frac{2\pi j}{12}\Big) \text{,}
+    + \beta_4 \cdot \cos \Big(\frac{2\pi j}{12}\Big) + \epsilon_{ij} \text{,}
 \]
 
 kjer je $i=1986,\dots,2020$ in $j=1,2,\dots,12$. Indeks $i$ torej pomeni leto, indeks 
@@ -410,16 +411,124 @@ ne bi imeli linearne regresije in ne bi znali izračunati parametrov po metodi n
 kvadratov; parameter $\delta$ bi nastopal znotraj nelinearne funkcije.
 Linearno regresijo lahko zapišemo v splošni matrični obliki
 
-$$ Y = X\beta + \epsilon \text{,}
+$$ Y = X\boldsymbol{\beta} + \boldsymbol{\epsilon} \text{,}
 $$
 
-kjer je $\beta$ neznan vektor koeficientov (pri nas $\beta = [\beta_1, \beta_2, \beta_3,
-\beta_4]$), $Y$ opazljiv slučajni vektor, $\epsilon$ slučajni vektor šumov, 
-$X$ pa konstantna matrika, sestavljena iz izmerjenih podatkov. Pri nas bo 
-izgledala takole
+kjer je $\boldsymbol{\beta}$ neznan vektor koeficientov (pri nas $\boldsymbol{\beta} = 
+[\beta_1, \beta_2, \beta_3, \beta_4]$), $Y$ opazljiv slučajni vektor, 
+$\boldsymbol{\epsilon}$ slučajni vektor šumov, $X$ pa konstantna matrika, sestavljena 
+iz izmerjenih podatkov. Pri nas bo izgledala takole
 
+$$
+X^T =
+\left( \begin{array}{ccccccc}
+    1986& 1986  & \ldots    & 1986  & 1987  & \ldots    & 2020  \\
+    1   & 1     & \ldots    & 1     & 1     & \ldots    & 1     \\
+    \sin(\frac{2\pi\cdot1}{12}) & \sin(\frac{2\pi\cdot2}{12}) & \ldots &
+    \sin(\frac{2\pi\cdot12}{12}) & \sin(\frac{2\pi\cdot1}{12}) &
+    \ldots  & \sin(\frac{2\pi\cdot12}{12})   \\
+    \cos(\frac{2\pi\cdot1}{12}) & \cos(\frac{2\pi\cdot2}{12}) & \ldots &
+    \cos(\frac{2\pi\cdot12}{12}) & \cos(\frac{2\pi\cdot1}{12}) &
+    \ldots  & \cos(\frac{2\pi\cdot12}{12})   \\
+    \end{array} \right)
+    \text{.}
+$$
 
+Po metodi najmanjših kvadratov dobimo, da je vektor koeficientov enak 
+$\beta = [0.064636, -118.20895, -5.12135, -9.04180]$. Opazimo, da sta prva 
+dva koeficienta ista kot pri linearnem modelu. Poglejmo si, kako stvar izgleda 
+na sliki.
 
+\begin{center}
+    \includegraphics[scale=0.5]{Naloga_3_05}
+\end{center}
+
+Sicer ne moremo prav dobro reči, vendar se nam zdi, da se model kar dobro prilega 
+izmerjenim temperaturam. Spet ocenimo standardni odklon, tu znaša $\hat{\sigma}_+ 
+= 1.73922$, kar je dosti manj kot pri linearnem modelu. Poglejmo si, kako izgledajo 
+reziduali in histogram rezidualov, na katerega narišemo še graf gostote normalne 
+porazdelitve z varianco $\hat{\sigma}_+^2$.
+
+\begin{figure}[h]
+    \subfigure[]{\includegraphics[scale=0.5]{Naloga_3_06}} 
+    \subfigure[]{\includegraphics[scale=0.5]{Naloga_3_07}} 
+\end{figure}
+
+Vidimo, da se histogram rezidualov modela A dokaj lepo prilega ustrezni 
+normalni porazdelitvi.
+Navodilo naloge nam pove, da model B vključuje linearni trend in spreminjanje 
+temperature za vsak mesec posebej in da je model B širši od modela A. Torej je 
+model linearno odvisen od zaporednega leta in z nekimi dodatnimi funkcijami 
+odvisen od zaporednega meseca, od prvega pa vse do 420. meseca. 
+
+$$ Y_{ij} = \beta_1 \cdot i + \beta_2 + \boldsymbol{\beta} \cdot G(j) + 
+\epsilon_{ij}, \quad \boldsymbol{\beta} = [\beta_3, \ldots, \beta_p]
+$$
+
+Model B mora biti širši od modela A, torej mora vsebovati sinusne in cosinusne 
+člene:
+
+$$ Y_{ij} = \beta_1 \cdot i + \beta_2 + \beta_3 \cdot \sin \Big(\frac{2\pi j}{12}\Big)
++ \beta_4 \cdot \cos \Big(\frac{2\pi j}{12}\Big) + \boldsymbol{\beta} \cdot G(j) + 
+\epsilon_{ij}, \quad \boldsymbol{\beta} = [\beta_5, \ldots, \beta_p]
+$$
+
+Določimo, da je $G(j) = [j, j^2]$. Torej bomo imeli
+
+$$ Y_{ij} = \beta_1 \cdot i + \beta_2 + \beta_3 \cdot \sin \Big(\frac{2\pi j}{12}\Big)
++ \beta_4 \cdot \cos \Big(\frac{2\pi j}{12}\Big) + \beta_5 \cdot j + \beta_6 \cdot j^2 
++ \epsilon_{ij} \text{.}
+$$
+
+Po metodi najmanjših kvadratov določimo, da je $\boldsymbol{\beta} = [1.35754, 
+-2685.209, $ $-5.52345, -8.93405, -0.04750, -0.06024]$. 
+
+\begin{center}
+    \includegraphics[scale=0.5]{Naloga_3_08}
+\end{center}
+
+Model se na pogled dobro prilega. Izračunamo, da je standardni odklon pri tem 
+modelu ocenjen z $\hat{\sigma}_+ = 1.72405$. 
+
+\begin{figure}[h]
+    \subfigure[]{\includegraphics[scale=0.5]{Naloga_3_09}} 
+    \subfigure[]{\includegraphics[scale=0.5]{Naloga_3_10}}   
+\end{figure}
+
+Spet vidimo, da histogram rezidualov zavzame obliko gostote normalne porazdelitve 
+z ocenjeno varianco. Sedaj primerjajmo še kvadratne reziduale obeh modelov. 
+
+\begin{center}
+    \includegraphics[scale=0.5]{Naloga_3_11}
+\end{center}
+
+Vidimo, da model A ne odstopa preveč glede rezidualov, na pogled izgleda, da imata 
+modela podobno porazdelitev kvadratnih rezidualov. 
+Sedaj pa preizkusimo model A znotraj modela B. Uporabili bomo Fisherjev test, ki 
+smo ga izpeljali na predavanjih. Pri tem testu imamo vrednost F, ki se jo izračuna 
+na sledeč način: 
+
+$$  F = \frac{\frac{\text{RSS}_A - \text{RSS}_B}{p-q}}{\frac{\text{RSS}_B}{n-p}} \text{.}
+$$
+
+Tu je $\text{RSS}_A$ vsota kvadratov rezidualov modela A, $\text{RSS}_B$ vsota 
+kvadratov rezidualov B, $p$ število iskanih koeficientov v modelu B ($p=6$), 
+$q$ število koeficientov v modelu A ($q=4$), $n$ pa število meritev $n=420$. 
+Ker je model B širši od A in ima več koeficientov kot model A, se bo lahko bolje 
+prilegal meritvam oziroma vsota kvadratnih rezidualov bo manjša, se pravi 
+$\text{RSS}_A \geq \text{RSS}_B$. Izračunamo, da je $\text{RSS}_A = 1258.35895$ 
+in $\text{RSS}_B = 1230.55448$, torej neenakost res drži. 
+Fisherjev test deluje tako, da najprej postavimo ničelno domnevo $H_0 : \beta_5 = 
+\beta_6 = 0$ in alternativno domnevo $H_1 : \beta_5 \neq 0 \text{ ali }\beta_6 
+\neq 0$. Ničelno domnevo $H_0$ pri stopnji tveganja $\alpha$ zavrnemo, če je
+
+$$ F \geq F^{-1}_{Fischer(p-q, n-p)}(1-\alpha) \text{,}
+$$
+
+sicer pa jo sprejmemo. Izračunamo, da je $F = 4.67718$. Pri stopnji tveganja 
+$\alpha = 0.05$ je desna stran v testu enaka $19.49331$, pri stopnji tveganja 
+$\alpha = 0.01$ pa je desna stran enaka $99.49675$. Torej v obeh primerih 
+sprejmemo ničelno domnevo, sprejmemo model A znotraj modela B.
 
 \subsection*{b)}
 Pri modeliranju je nevarno privzeti preširok model: lahko bi recimo postavili
